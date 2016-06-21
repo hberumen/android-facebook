@@ -14,13 +14,12 @@ import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import hberumen.me.facebookrecipes.R;
-import hberumen.me.facebookrecipes.RecipeMainActivity;
+import hberumen.me.facebookrecipes.recipemain.ui.RecipeMainActivity;
 
 public class LoginActivity extends AppCompatActivity {
 

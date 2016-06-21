@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class RecipeClient {
     private Retrofit retrofit;
-    private static final String BASE_URL = "http://food2fork/api/";
+    private static final String BASE_URL = "http://food2fork.com/api/";
 
     public RecipeClient() {
         this.retrofit = new Retrofit.Builder()
