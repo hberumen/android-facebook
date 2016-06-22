@@ -5,4 +5,5 @@ package hberumen.me.facebookrecipes.recipelist;
  */
 public interface RecipeListInteractor {
     void execute();
+    void searchFavs();
 }

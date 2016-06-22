@@ -1,11 +1,13 @@
 package hberumen.me.facebookrecipes.recipelist;
 
 import com.raizlabs.android.dbflow.list.FlowCursorList;
+import com.raizlabs.android.dbflow.sql.language.Select;
 
 import java.util.Arrays;
 import java.util.List;
 
 import hberumen.me.facebookrecipes.entities.Recipe;
+import hberumen.me.facebookrecipes.entities.Recipe_Table;
 import hberumen.me.facebookrecipes.libs.base.EventBus;
 import hberumen.me.facebookrecipes.recipelist.events.RecipeListEvent;
 
@@ -37,6 +39,12 @@ public class RecipeListRepositoryImpl implements RecipeListRepository {
     public void removeRecipe(Recipe recipe) {
         recipe.delete();
         post(RecipeListEvent.DELETE_EVENT, Arrays.asList(recipe));
+    }
+
+    @Override
+    public void getRecipeFavorites() {
+        List<Recipe> recipes = new Select().from(Recipe.class).where(Recipe_Table.favorite.is(true)).queryList();
+        post(RecipeListEvent.READ_EVENT, recipes);
     }
 
     private void post(int type, List<Recipe> recipes){

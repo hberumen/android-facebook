@@ -71,6 +71,16 @@ public class RecipeListPresenterImpl implements RecipeListPresenter {
     }
 
     @Override
+    public void showAll() {
+        getRecipes();
+    }
+
+    @Override
+    public void showFavs() {
+        listInteractor.searchFavs();
+    }
+
+    @Override
     public RecipeListView getView() {
         return this.view;
     }

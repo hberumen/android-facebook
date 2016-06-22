@@ -8,5 +8,7 @@
 
     <string name="global.menu.action.logout">Cerrar sesión.</string>
     <string name="recipemain.menu.action.main">Elegir receta</string>
+    <string name="global.menu.action.show_all">Ver todos</string>
+    <string name="global.menu.action.show_favs">Favoritos</string>
 
 </resources>

@@ -15,6 +15,8 @@ public interface RecipeListPresenter {
     void removeRecipe(Recipe recipe);
     void toggleFavorite(Recipe recipe);
     void onEventMainThread(RecipeListEvent event);
+    void showAll();
+    void showFavs();
 
     RecipeListView getView();
 }
