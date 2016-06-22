@@ -77,6 +77,7 @@ public class RecipeMainPresenterImpl implements RecipeMainPresenter {
                     view.setRecipe(recipeMainEvent.getRecipe());
                 }else if(recipeMainEvent.getType() == RecipeMainEvent.SAVE_EVENT){
                     getNextRecipeIteractor.execute();
+                    view.onRecipeSaved();
                 }
             }
         }

@@ -24,12 +24,11 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import hberumen.me.facebookrecipes.FacebookRecipesApp;
 import hberumen.me.facebookrecipes.R;
-import hberumen.me.facebookrecipes.RecipeListActivity;
+import hberumen.me.facebookrecipes.recipelist.ui.RecipeListActivity;
 import hberumen.me.facebookrecipes.entities.Recipe;
 import hberumen.me.facebookrecipes.libs.base.ImageLoader;
 import hberumen.me.facebookrecipes.recipemain.RecipeMainPresenter;
 import hberumen.me.facebookrecipes.recipemain.di.RecipeMainComponent;
-import hberumen.me.facebookrecipes.recipemain.events.RecipeMainEvent;
 
 public class RecipeMainActivity extends AppCompatActivity implements RecipeMainView, SwipeGestureListener {
 

@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import com.raizlabs.android.dbflow.annotation.Column;
 import com.raizlabs.android.dbflow.annotation.PrimaryKey;
 import com.raizlabs.android.dbflow.annotation.Table;
-import com.raizlabs.android.dbflow.structure.Model;
+import com.raizlabs.android.dbflow.structure.BaseModel;
 
 import hberumen.me.facebookrecipes.db.RecipesDatabase;
 
@@ -12,7 +12,7 @@ import hberumen.me.facebookrecipes.db.RecipesDatabase;
  * Created by hberumen on 20/06/16.
  */
 @Table(database = RecipesDatabase.class)
-public class Recipe  implements Model{
+public class Recipe  extends BaseModel{
     @SerializedName("recipe_id")
     @PrimaryKey private String recipeID;
 
@@ -71,30 +71,5 @@ public class Recipe  implements Model{
             equal = this.recipeID.equals(recipe.getRecipeID());
         }
         return equal;
-    }
-
-    @Override
-    public void save() {
-
-    }
-
-    @Override
-    public void delete() {
-
-    }
-
-    @Override
-    public void update() {
-
-    }
-
-    @Override
-    public void insert() {
-
-    }
-
-    @Override
-    public boolean exists() {
-        return false;
     }
 }

@@ -9,6 +9,12 @@ import com.raizlabs.android.dbflow.config.FlowManager;
 
 import hberumen.me.facebookrecipes.libs.di.LibsModule;
 import hberumen.me.facebookrecipes.login.ui.LoginActivity;
+import hberumen.me.facebookrecipes.recipelist.di.DaggerRecipeListComponent;
+import hberumen.me.facebookrecipes.recipelist.di.RecipeListComponent;
+import hberumen.me.facebookrecipes.recipelist.di.RecipeListModule;
+import hberumen.me.facebookrecipes.recipelist.ui.RecipeListActivity;
+import hberumen.me.facebookrecipes.recipelist.ui.RecipeListView;
+import hberumen.me.facebookrecipes.recipelist.ui.adapters.OnItemClickListener;
 import hberumen.me.facebookrecipes.recipemain.di.DaggerRecipeMainComponent;
 import hberumen.me.facebookrecipes.recipemain.di.RecipeMainComponent;
 import hberumen.me.facebookrecipes.recipemain.di.RecipeMainModule;
@@ -59,6 +65,14 @@ public class FacebookRecipesApp extends Application{
                 .builder()
                 .libsModule(new LibsModule(activity))
                 .recipeMainModule(new RecipeMainModule(view))
+                .build();
+    }
+
+    public RecipeListComponent getRecipeListComponent(RecipeListActivity activity, RecipeListView view, OnItemClickListener clickListener){
+        return DaggerRecipeListComponent
+                .builder()
+                .libsModule(new LibsModule(activity))
+                .recipeListModule(new RecipeListModule(view, clickListener))
                 .build();
     }
 }
